@@ -1,7 +1,9 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import {ProvidersWrapper} from "../system";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <ProvidersWrapper>
+    <Component {...pageProps} />
+  </ProvidersWrapper>
 }
-
 export default MyApp

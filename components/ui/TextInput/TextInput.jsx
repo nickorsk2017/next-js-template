@@ -1,30 +1,18 @@
 import {useRef} from "react";
+import { ErrorMessage } from '@hookform/error-message';
 import styles from './TextInput.module.css';
 
 export function TextInput(props) {
-    const {error, onChange, value, label} = props;
-    let timerHandler = null;
-    const inputRef = useRef(null);
-
-    if(inputRef.current && value !== inputRef.current.value){
-      inputRef.current.value = value;
-    }
-    const onChangeHandler = (e) => {
-      clearTimeout(timerHandler);
-      const cachedValue = e.target.value;
-      timerHandler = setTimeout(() => {
-        onChange(cachedValue);
-      }, 300);
-    }
-    const onBlur = (e) => {
-      clearTimeout(timerHandler);
-      onChange(e.target.value);
-    }
+    const {name, register, label, defaultValue, errors} = props;
     return (
       <div className={styles.textInput}>
         {label && <label className={styles.label}>{label}</label>}
-        <input className={styles.input} onBlur={onBlur} onChange={onChangeHandler} defaultValue={value} ref={inputRef}/>
-        {error && <span className={styles.error}>{error}</span>}
+        <input className={styles.input} name={name} defaultValue={defaultValue} ref={register} />
+        <ErrorMessage
+          render={({message}) => <p className={styles.error}>{message}</p>} 
+          errors={errors} 
+          name={name}
+        />
       </div>
     )
 }

@@ -1,2 +1,2 @@
 
-export {GET_STUDENT, GET_STUDENTS} from "./student";
+export {GET_STUDENT, GET_STUDENTS, CREATE_STUDENT} from "./student";

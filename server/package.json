@@ -10,7 +10,8 @@
   "author": "Stepanov Nickolay (Nick)",
   "license": "MIT",
   "dependencies": {
+    "apollo-server-express": "^2.18.0-rc.1",
     "express": "^4.17.1",
-    "apollo-server-express": "^2.18.0-rc.1"
+    "lowdb": "^1.0.0"
   }
 }

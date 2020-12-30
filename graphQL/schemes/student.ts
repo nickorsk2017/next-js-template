@@ -6,7 +6,8 @@ export const GET_STUDENTS = gql`
             id,
             firstName,
             lastName,
-            email
+            email,
+            address
         }
     }`;
 export const GET_STUDENT = gql`
@@ -15,9 +16,26 @@ export const GET_STUDENT = gql`
             id,
             firstName,
             lastName,
-            email
+            email,
+            address
         }
     }`;
+
+export const CREATE_STUDENT = gql`
+mutation CreateStudent($studentInput: StudentInput!) {
+    createStudent(studentInput: $studentInput) {
+            id,
+            firstName,
+            lastName,
+            email,
+            address
+        }
+}`;
+
+
+    // createStudent(studentInput: StudentInput): Student!
+
+
     /*type Mutation {
         createStudent(studentInput: StudentInput): Student!
         updateStudent(studentId: ID!, studentInput: StudentInput): Student!

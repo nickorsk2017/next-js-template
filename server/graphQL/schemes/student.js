@@ -17,11 +17,13 @@ export default ApolloServer.gql`
         email: String!
         firstName: String!
         lastName: String!
+        address: String
     }
     type Student {
         id: ID!
         email: String!
         firstName: String!
         lastName: String!
+        address: String
     }
 `;

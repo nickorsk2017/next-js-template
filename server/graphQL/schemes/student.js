@@ -2,7 +2,7 @@ import ApolloServer from 'apollo-server-express';
 
 export default ApolloServer.gql`
     type Query {
-        students: [Student]!
+        students(offset: Int, limit: Int): [Student!]
         student(studentId: ID!): Student!
     }
     type Mutation {

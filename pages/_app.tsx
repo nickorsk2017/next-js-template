@@ -6,4 +6,4 @@ function MyApp({ Component, pageProps }) {
     <Component {...pageProps} />
   </ProvidersWrapper>
 }
-export default MyApp
+export default MyApp;

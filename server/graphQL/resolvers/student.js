@@ -3,57 +3,9 @@ import {StudentService} from "../../db/services/index.js";
 export const StudentQueries = {
     students: async (parent, args, context) => {
       try {
-        return [
-            {
-                id: 1,
-                firstName: "Nick",
-                lastName: "Stepanov",
-                email: "fesfs@ffff.com",
-                address: ""
-            },
-            {
-                id: 2,
-                firstName: "Student",
-                lastName: "2",
-                email: "student2@gmail.com",
-                address: ""
-            },
-            {
-                id: 3,
-                firstName: "Student",
-                lastName: "3",
-                email: "student3@gmail.com",
-                address: ""
-            },
-            {
-                id: 4,
-                firstName: "Student",
-                lastName: "4",
-                email: "student4@gmail.com",
-                address: ""
-            },
-            {
-                id: 5,
-                firstName: "Student",
-                lastName: "5",
-                email: "student5@gmail.com",
-                address: ""
-            },
-            {
-                id: 6,
-                firstName: "Student",
-                lastName: "6",
-                email: "student6@gmail.com",
-                address: ""
-            },
-            {
-                id: 7,
-                firstName: "Student",
-                lastName: "7",
-                email: "student7@gmail.com",
-                address: "",
-            },
-        ]
+        const {offset, limit} = args;
+        const studentService = new StudentService();
+        return studentService.getStudents({offset, limit});
       } catch (err) {
         throw err;
       }
@@ -79,6 +31,7 @@ export const StudentMutations = {
       const studentService = new StudentService();
       return studentService.addStudent({
         id: Date.now(),
+        created: new Date().getTime(),
         ...studentInput
       })
     } catch (err) {

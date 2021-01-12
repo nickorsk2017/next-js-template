@@ -11,4 +11,10 @@ export class StudentService {
         .write();
         return studentData;
     }
+    getStudents = ({offset, limit}) => {
+        return this.db.get('students')
+        .sortBy('created')
+        .slice(offset, offset + limit)
+        .value();
+    }
 }

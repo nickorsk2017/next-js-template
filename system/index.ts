@@ -1,1 +1,1 @@
-export {ProvidersWrapper} from "./ProvidersWrapper";
+export { ProvidersWrapper } from "./ProvidersWrapper";

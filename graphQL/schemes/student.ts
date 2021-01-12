@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_STUDENTS = gql`
-    query GetStudents{
-        students {
+    query GetStudents($offset: Int!, $limit: Int!){
+        students(offset: $offset, limit: $limit) {
             id,
             firstName,
             lastName,

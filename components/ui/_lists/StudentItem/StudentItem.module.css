@@ -1,0 +1,7 @@
+.studentItem {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
